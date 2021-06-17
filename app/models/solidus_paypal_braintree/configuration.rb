@@ -27,6 +27,6 @@ module SolidusPaypalBraintree
       preference preference_name, :string, default: desc[:default]
 
       validates attribute_name, inclusion: desc[:availables]
-    end
+    end if SolidusSupport.frontend_available?
   end
 end
